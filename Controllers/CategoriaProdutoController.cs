@@ -7,7 +7,7 @@ using ProjetoLP3.Models;
 
 namespace ProjetoLP3.Controllers
 {
-    public class CategoriaProdutoController : Controller
+    public class CategoriaProdutoController : BaseController
     {
         private SeminarioLP3Container db = new SeminarioLP3Container();
 

@@ -11,6 +11,12 @@ namespace ProjetoLP3.Controllers
     {
         private SeminarioLP3Container db = new SeminarioLP3Container();
 
+        public ActionResult Login()
+        {
+            ViewBag.Title = "Autenticação";
+            return View();
+        }
+
         public ActionResult Index()
         {
             ViewBag.Bairro = new SelectList(db.Bairro, "IdBairro", "Nome");

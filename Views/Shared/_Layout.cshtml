@@ -30,6 +30,7 @@
                     <li>@Html.ActionLink("Rua", "Index", "Rua")</li>
                     <li>@Html.ActionLink("TipoComercio", "Index", "TipoComercio")</li>
                     <li>@Html.ActionLink("Usuario", "Index", "Usuario")</li>
+                    <li><a id="botao-sair" class="btn btn-success" style="display: none; color: white;">Sair</a></li>
                 </ul>
             </div>
         </div>
@@ -44,6 +45,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src=" @Url.Content("~/Scripts/Autenticacao.js")"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
