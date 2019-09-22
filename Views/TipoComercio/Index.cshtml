@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProjetoLP3.Models.TipoComercio>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tipos de comércio</h2>
+
+<p>
+    @Html.ActionLink("Criar novo", "Inserir")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrgaoRegulador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Permissao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrgaoRegulador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Permissao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Alterar", new { id=item.IdComercio }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.IdComercio }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.IdComercio })
+        </td>
+    </tr>
+}
+
+</table>

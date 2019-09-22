@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProjetoLP3.Models.Bairro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Bairros</h2>
+
+<p>
+    @Html.ActionLink("Criar novo", "Inserir")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zona)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Alterar", new { id=item.IdBairro }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.IdBairro }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.IdBairro })
+        </td>
+    </tr>
+}
+
+</table>

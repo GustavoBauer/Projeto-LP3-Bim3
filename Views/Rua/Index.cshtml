@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProjetoLP3.Models.Rua>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Ruas</h2>
+
+<p>
+    @Html.ActionLink("Criar novo", "Inserir")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CEP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bairro.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoComercio.Nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CEP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bairro.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoComercio.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Alterar", new { id=item.IdRua }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.IdRua }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.IdRua })
+        </td>
+    </tr>
+}
+
+</table>

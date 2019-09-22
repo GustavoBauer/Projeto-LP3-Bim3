@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProjetoLP3.Models.CategoriaProduto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Categorias de produto</h2>
+
+<p>
+    @Html.ActionLink("Criar novo", "Inserir")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoComercio.Nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoComercio.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Alterar", new { id=item.IdCategoriaProduto }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.IdCategoriaProduto }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.IdCategoriaProduto })
+        </td>
+    </tr>
+}
+
+</table>

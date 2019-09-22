@@ -126,7 +126,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BairroController.cs" />
+    <Compile Include="Controllers\CategoriaProdutoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LojaController.cs" />
+    <Compile Include="Controllers\RuaController.cs" />
+    <Compile Include="Controllers\TipoComercioController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -142,6 +148,7 @@
       <DependentUpon>ProjetoLP3.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LojaMetadado.cs" />
+    <Compile Include="Models\Pesquisa.cs" />
     <Compile Include="Models\ProjetoLP3.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -157,6 +164,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjetoLP3.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ResultadoPesquisa.cs" />
     <Compile Include="Models\Rua.cs">
       <DependentUpon>ProjetoLP3.tt</DependentUpon>
     </Compile>
@@ -222,9 +230,47 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Bairro\Index.cshtml" />
+    <Content Include="Views\Bairro\Inserir.cshtml" />
+    <Content Include="Views\Bairro\Alterar.cshtml" />
+    <Content Include="Views\Bairro\Excluir.cshtml" />
+    <Content Include="Views\Bairro\ErroExcluir.cshtml" />
+    <Content Include="Views\Bairro\Detalhes.cshtml" />
+    <Content Include="Views\CategoriaProduto\Index.cshtml" />
+    <Content Include="Views\CategoriaProduto\Inserir.cshtml" />
+    <Content Include="Views\CategoriaProduto\Alterar.cshtml" />
+    <Content Include="Views\CategoriaProduto\Excluir.cshtml" />
+    <Content Include="Views\CategoriaProduto\ErroExcluir.cshtml" />
+    <Content Include="Views\CategoriaProduto\Detalhes.cshtml" />
+    <Content Include="Views\Loja\Index.cshtml" />
+    <Content Include="Views\Loja\Inserir.cshtml" />
+    <Content Include="Views\Loja\Alterar.cshtml" />
+    <Content Include="Views\Loja\Excluir.cshtml" />
+    <Content Include="Views\Loja\ErroExcluir.cshtml" />
+    <Content Include="Views\Loja\Detalhes.cshtml" />
+    <Content Include="Views\Rua\Index.cshtml" />
+    <Content Include="Views\Rua\Inserir.cshtml" />
+    <Content Include="Views\Rua\Alterar.cshtml" />
+    <Content Include="Views\Rua\Excluir.cshtml" />
+    <Content Include="Views\Rua\ErroExcluir.cshtml" />
+    <Content Include="Views\Rua\Detalhes.cshtml" />
+    <Content Include="Views\TipoComercio\Index.cshtml" />
+    <Content Include="Views\TipoComercio\Inserir.cshtml" />
+    <Content Include="Views\TipoComercio\Alterar.cshtml" />
+    <Content Include="Views\TipoComercio\Excluir.cshtml" />
+    <Content Include="Views\TipoComercio\ErroExcluir.cshtml" />
+    <Content Include="Views\TipoComercio\Detalhes.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Inserir.cshtml" />
+    <Content Include="Views\Usuario\Alterar.cshtml" />
+    <Content Include="Views\Usuario\Excluir.cshtml" />
+    <Content Include="Views\Usuario\ErroExcluir.cshtml" />
+    <Content Include="Views\Usuario\Detalhes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -28,7 +28,7 @@ namespace ProjetoLP3.Models
         public virtual DbSet<Rua> Rua { get; set; }
         public virtual DbSet<TipoComercio> TipoComercio { get; set; }
         public virtual DbSet<Bairro> Bairro { get; set; }
-        public virtual DbSet<CategoriaProduto> CategoriaProdutoSet { get; set; }
+        public virtual DbSet<CategoriaProduto> CategoriaProduto { get; set; }
         public virtual DbSet<Loja> Loja { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
     }

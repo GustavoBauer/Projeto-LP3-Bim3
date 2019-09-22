@@ -1,0 +1,50 @@
+﻿@model ProjetoLP3.Models.Rua
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Rua</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CEP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CEP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoComercio.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoComercio.Nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Alterar", new { id = Model.IdRua }) |
+    @Html.ActionLink("Voltar para a lista", "Index")
+</p>
