@@ -29,3 +29,140 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+<!-- Pesquisa 1-->
+<h3> Ruas a partir de Bairro e Tipo de Comércio </h3>
+<div class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <label>Bairro</label>
+            @Html.DropDownList("Bairro")
+        </div>
+        <div class="form-group">
+            <label>Tipo de Comércio</label>
+            @Html.DropDownList("TipoComercio")
+        </div>
+        <button type="button" id="pesquisar1" class="btn btn-success">Pesquisar</button>
+        <br /> <br />
+    </form>
+</div>
+<div class="row">
+    <div id="resultados1"></div>
+</div>
+
+<!-- Pesquisa 2-->
+<h3> Lojas a partir de Rua </h3>
+<div class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <label>Rua</label>
+            @Html.DropDownList("Rua")
+        </div>
+        <button type="button" id="pesquisar2" class="btn btn-success">Pesquisar</button>
+        <br /> <br />
+    </form>
+</div>
+<div class="row">
+    <div id="resultados2"></div>
+</div>
+
+<!-- Pesquisa 3-->
+<h3> Ruas a partir de Tipo de Comércio </h3>
+<div class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <label>Tipo de Comércio</label>
+            @Html.DropDownList("TipoComercio")
+        </div>
+        <button type="button" id="pesquisar3" class="btn btn-success">Pesquisar</button>
+        <br /> <br />
+    </form>
+</div>
+<div class="row">
+    <div id="resultados3"></div>
+</div>
+
+@section Scripts{
+    <script>
+        $(function () {
+            $("#pesquisar1").on("click", function () {
+                var pesquisa = {
+                    IDBairro: $("#Bairro").val(),
+                    IDComercio: $("#TipoComercio").val()
+                }
+                $.getJSON("/home/pesquisar1", pesquisa, function (data) {
+                    var resultados = $("#resultados1");
+                    resultados.empty();
+
+                    if (data.length == 0) {
+                        resultados.append('<div class="alert alert-warning"> Não encontramos nada :( </div>');
+                        return false;
+                    }
+
+                    for (var i = 0; i < data.length; i++) {
+                        resultados.append('<div class="alert alert-success">' +
+                            '<h4><b>Nome </b> ' + data[i].Nome + '</b><h4>' +
+                            '<p><b>CEP </b> ' + data[i].CEP + '</p>' +
+                            '</div>');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $("#pesquisar2").on("click", function () {
+                var pesquisa = {
+                    IDRua: $("#Rua").val()
+                }
+                $.getJSON("/home/pesquisar2", pesquisa, function (data) {
+                    var resultados = $("#resultados2");
+                    resultados.empty();
+
+                    if (data.length == 0) {
+                        resultados.append('<div class="alert alert-warning"> Não encontramos nada :( </div>');
+                        return false;
+                    }
+
+                    for (var i = 0; i < data.length; i++) {
+                        resultados.append('<div class="alert alert-success">' +
+                            '<h4><b>Nome Comercial </b> ' + data[i].NomeComercial + '</b><h4>' +
+                            '<p><b>Razao Social </b> ' + data[i].RazaoSocial + '</p>' +
+                            '<p><b>CNPJ </b> ' + data[i].CNPJ + '</p>' +
+                            '<p><b>Telefone </b> ' + data[i].Telefone + '</p>' +
+                            '<p><b>Site </b> ' + data[i].Site + '</p>' +
+                            '</div>');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $("#pesquisar3").on("click", function () {
+                var pesquisa = {
+                    IDComercio: $("#TipoComercio").val()
+                }
+                $.getJSON("/home/pesquisar3", pesquisa, function (data) {
+                    var resultados = $("#resultados3");
+                    resultados.empty();
+
+                    if (data.length == 0) {
+                        resultados.append('<div class="alert alert-warning"> Não encontramos nada :( </div>');
+                        return false;
+                    }
+
+                    for (var i = 0; i < data.length; i++) {
+                        resultados.append('<div class="alert alert-success">' +
+                            '<h4><b>Nome </b> ' + data[i].Nome + '</b><h4>' +
+                            '<p><b>CEP </b> ' + data[i].CEP + '</p>' +
+                            '</div>');
+                    }
+                });
+            });
+        });
+    </script>
+
+}
