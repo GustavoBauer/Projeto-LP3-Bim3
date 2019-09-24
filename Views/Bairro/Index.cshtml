@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.Cidade)
         </td>
         <td>
-            @Html.ActionLink("Alterar", "Alterar", new { id=item.IdBairro }) |
-            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.IdBairro }) |
-            @Html.ActionLink("Excluir", "Excluir", new { id=item.IdBairro })
+            @Html.ActionLink("Alterar", "Alterar", new { id = item.IdBairro }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id = item.IdBairro }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id = item.IdBairro })
         </td>
     </tr>
 }

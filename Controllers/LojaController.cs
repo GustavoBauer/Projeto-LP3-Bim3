@@ -90,5 +90,15 @@ namespace ProjetoLP3.Controllers
             }
             return View(loja);
         }
+
+        public ActionResult ValidaCPNJ(string cnpj)
+        {
+            var val = db.Loja.Where(l => l.CNPJ == cnpj).FirstOrDefault();
+            
+            if (val != null)
+                return Json(false, JsonRequestBehavior.AllowGet);
+            else 
+                return Json(true, JsonRequestBehavior.AllowGet);
+        }
     }
 }
