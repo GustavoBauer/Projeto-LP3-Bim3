@@ -1,7 +1,7 @@
 ﻿@model ProjetoLP3.Models.Loja
 
 @{
-    ViewBag.Title = "Inserir";
+    ViewBag.Title = "Inserir Loja";
 }
 
 <h2>Inserir</h2>
@@ -16,7 +16,7 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.FkRua, "FkRua", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.FkRua, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("FkRua", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.FkRua, "", new { @class = "text-danger" })
@@ -65,7 +65,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Criar" class="btn btn-default" />
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 ﻿@model ProjetoLP3.Models.CategoriaProduto
 
 @{
-    ViewBag.Title = "Alterar";
+    ViewBag.Title = "Alterar Categoria de Produto";
 }
 
 <h2>Alterar</h2>
@@ -12,13 +12,13 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>CategoriaProduto</h4>
+        <h4>Categoria de Produto</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.IdCategoriaProduto)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FkTipoComercio, "FkTipoComercio", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.FkTipoComercio, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("FkTipoComercio", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.FkTipoComercio, "", new { @class = "text-danger" })
@@ -43,7 +43,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default" />
             </div>
         </div>
     </div>

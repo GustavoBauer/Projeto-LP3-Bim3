@@ -1,85 +1,70 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Início";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+@Html.ExibeImagem()
+<div class="pesquisas">
+    @Html.ExibeFrase()
+    <button class="accordion"><h3> Ruas a partir de Bairro e Tipo de Comércio </h3></button>
+    <div class="panel">
+        <div class="container row">
+            <form class="form-inline" style="margin: 20px 0 10px 0">
+                <div class="form-group">
+                    <label style="font-size:16px">Bairro</label>
+                    @Html.DropDownList("Bairro", null, new { @class = "list" })
+                </div>
+                <br />
+                <div class="form-group">
+                    <label style="font-size:16px">Tipo de Comércio</label>
+                    <span class="tipoComercio1">@Html.DropDownList("TipoComercio", null, new { @class = "list" })</span>
+                </div>
+                <button type="button" id="pesquisar1" class="btn btn-success">Pesquisar</button>
+                <br /> <br />
+            </form>
+        </div>
+        <div class="row">
+            <div id="resultados1"></div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <!-- Pesquisa 2-->
+    <button class="accordion"><h3> Lojas a partir de Rua </h3></button>
+    <div class="panel">
+        <div class="container row">
+            <form class="form-inline" style="margin: 20px 0 10px 0">
+                <div class="form-group">
+                    <label style="font-size:16px">Rua</label>
+                    @Html.DropDownList("Rua", null, new { @class = "list" })
+                </div>
+                <button type="button" id="pesquisar2" class="btn btn-success">Pesquisar</button>
+                <br /> <br />
+            </form>
+        </div>
+        <div class="row">
+            <div id="resultados2"></div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <!-- Pesquisa 3-->
+    <button class="accordion"><h3> Ruas a partir de Tipo de Comércio </h3></button>
+    <div class="panel">
+        <div class="container row">
+            <form class="form-inline" style="margin: 20px 0 10px 0">
+                <div class="form-group">
+                    <label style="font-size:16px">Tipo de Comércio</label>
+                    <span class="tipoComercio2">@Html.DropDownList("TipoComercio", null, new { @class = "list" })</span>
+                </div>
+                <button type="button" id="pesquisar3" class="btn btn-success">Pesquisar</button>
+                <br /> <br />
+            </form>
+        </div>
+        <div class="row">
+            <div id="resultados3"></div>
+        </div>
     </div>
-</div>
-
-<!-- Pesquisa 1-->
-<h3> Ruas a partir de Bairro e Tipo de Comércio </h3>
-<div class="row">
-    <form class="form-inline">
-        <div class="form-group">
-            <label>Bairro</label>
-            @Html.DropDownList("Bairro")
-        </div>
-        <div class="form-group">
-            <label>Tipo de Comércio</label>
-            @Html.DropDownList("TipoComercio")
-        </div>
-        <button type="button" id="pesquisar1" class="btn btn-success">Pesquisar</button>
-        <br /> <br />
-    </form>
-</div>
-<div class="row">
-    <div id="resultados1"></div>
-</div>
-
-<!-- Pesquisa 2-->
-<h3> Lojas a partir de Rua </h3>
-<div class="row">
-    <form class="form-inline">
-        <div class="form-group">
-            <label>Rua</label>
-            @Html.DropDownList("Rua")
-        </div>
-        <button type="button" id="pesquisar2" class="btn btn-success">Pesquisar</button>
-        <br /> <br />
-    </form>
-</div>
-<div class="row">
-    <div id="resultados2"></div>
-</div>
-
-<!-- Pesquisa 3-->
-<h3> Ruas a partir de Tipo de Comércio </h3>
-<div class="row">
-    <form class="form-inline">
-        <div class="form-group">
-            <label>Tipo de Comércio</label>
-            @Html.DropDownList("TipoComercio")
-        </div>
-        <button type="button" id="pesquisar3" class="btn btn-success">Pesquisar</button>
-        <br /> <br />
-    </form>
-</div>
-<div class="row">
-    <div id="resultados3"></div>
+    <div class="alert alert-warning" style="margin: 30px 0 30px 0;">
+        <b>Atenção:</b> caso possua acesso administrativo, @Html.ActionLink("faça login aqui!", "Login", "Home")
+    </div>
 </div>
 
 @section Scripts{
@@ -88,7 +73,7 @@
             $("#pesquisar1").on("click", function () {
                 var pesquisa = {
                     IDBairro: $("#Bairro").val(),
-                    IDComercio: $("#TipoComercio").val()
+                    IDComercio: $(".tipoComercio1 > #TipoComercio").val()
                 }
                 $.getJSON("/home/pesquisar1", pesquisa, function (data) {
                     var resultados = $("#resultados1");
@@ -100,10 +85,11 @@
                     }
 
                     for (var i = 0; i < data.length; i++) {
-                        resultados.append('<div class="alert alert-success">' +
+                        resultados.append('<div class="col-xs-6">' +
+                            '<div class="alert alert-success">' +
                             '<h4><b>Nome </b> ' + data[i].Nome + '</b><h4>' +
                             '<p><b>CEP </b> ' + data[i].CEP + '</p>' +
-                            '</div>');
+                            '</div> </div>');
                     }
                 });
             });
@@ -126,13 +112,14 @@
                     }
 
                     for (var i = 0; i < data.length; i++) {
-                        resultados.append('<div class="alert alert-success">' +
+                        resultados.append('<div class="col-xs-6">' +
+                            '<div class="alert alert-success">' +
                             '<h4><b>Nome Comercial </b> ' + data[i].NomeComercial + '</b><h4>' +
                             '<p><b>Razao Social </b> ' + data[i].RazaoSocial + '</p>' +
                             '<p><b>CNPJ </b> ' + data[i].CNPJ + '</p>' +
                             '<p><b>Telefone </b> ' + data[i].Telefone + '</p>' +
                             '<p><b>Site </b> ' + data[i].Site + '</p>' +
-                            '</div>');
+                            '</div> </div>');
                     }
                 });
             });
@@ -143,7 +130,7 @@
         $(function () {
             $("#pesquisar3").on("click", function () {
                 var pesquisa = {
-                    IDComercio: $("#TipoComercio").val()
+                    IDComercio: $(".tipoComercio2 > #TipoComercio").val()
                 }
                 $.getJSON("/home/pesquisar3", pesquisa, function (data) {
                     var resultados = $("#resultados3");
@@ -155,14 +142,41 @@
                     }
 
                     for (var i = 0; i < data.length; i++) {
-                        resultados.append('<div class="alert alert-success">' +
+                        resultados.append('<div class="col-xs-6">' +
+                            '<div class="alert alert-success">' +
                             '<h4><b>Nome </b> ' + data[i].Nome + '</b><h4>' +
                             '<p><b>CEP </b> ' + data[i].CEP + '</p>' +
-                            '</div>');
+                            '</div> </div');
                     }
                 });
             });
         });
+    </script>
+
+    <script>
+        $(function () {
+            $('.scroll-down').click(function () {
+                $('html, body').animate({ scrollTop: $('div.pesquisas').offset().top }, 'slow');
+                return false;
+            });
+        });
+    </script>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
     </script>
 
 }

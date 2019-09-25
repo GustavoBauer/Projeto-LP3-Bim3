@@ -21,7 +21,7 @@ namespace ProjetoLP3.Models
         public int FkRua { get; set; }
 
         [Required(ErrorMessage = "O CNPJ é obrigatório!", AllowEmptyStrings = false)]
-        [StringLength(14, MinimumLength = 14, ErrorMessage = "O CNPJ deve ter exatamente 14 caracteres")]
+        [StringLength(18, MinimumLength = 18, ErrorMessage = "O CNPJ deve ter exatamente 18 caracteres")]
         [RegularExpression(@"^\d{2}.\d{3}.\d{3}/\d{4}-\d{2}$",
             ErrorMessage = "Formato incorreto de CNPJ")]
         [System.Web.Mvc.Remote("ValidaCPNJ", "Loja", ErrorMessage = "Este CPF já existe no sistema")]

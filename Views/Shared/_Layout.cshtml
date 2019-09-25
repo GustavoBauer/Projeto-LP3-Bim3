@@ -4,15 +4,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    <title>@ViewBag.Title - Ruas de Comércio</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="@Url.Content("~/Scripts/jquery-3.3.1.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+    <link rel="stylesheet" href="~/StyleSheets/animated-bg.css" />
+    <link rel="stylesheet" href="~/StyleSheets/footer.css" />
+    <link rel="stylesheet" href="~/StyleSheets/parallax.css" />
+    <link rel="stylesheet" href="~/StyleSheets/pesquisa.css" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" id="navbar" style="transition: top 0.2s;">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -20,35 +24,33 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Ruas de Comércio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Bairro", "Index", "Bairro")</li>
-                    <li>@Html.ActionLink("CategoriaProduto", "Index", "CategoriaProduto")</li>
-                    <li>@Html.ActionLink("Loja", "Index", "Loja")</li>
-                    <li>@Html.ActionLink("Rua", "Index", "Rua")</li>
-                    <li>@Html.ActionLink("TipoComercio", "Index", "TipoComercio")</li>
-                    <li>@Html.ActionLink("Usuario", "Index", "Usuario")</li>
-                    <li><a id="botao-sair" class="btn btn-success" style="display: none; color: white;">Sair</a></li>
+                    <li>@Html.ActionLink("Bairros", "Index", "Bairro")</li>
+                    <li>@Html.ActionLink("Categorias de Produto", "Index", "CategoriaProduto")</li>
+                    <li>@Html.ActionLink("Lojas", "Index", "Loja")</li>
+                    <li>@Html.ActionLink("Ruas", "Index", "Rua")</li>
+                    <li>@Html.ActionLink("Tipos de Comércio", "Index", "TipoComercio")</li>
+                    <li>@Html.ActionLink("Usuários", "Index", "Usuario")</li>
+                    <li><a id="botao-sair" class="btn btn-danger" style="display: none; color: white;">Sair</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content opaco" style="padding-bottom:40px;">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
-        </footer>
     </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Ruas de Comércio</p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     <script src=" @Url.Content("~/Scripts/Autenticacao.js")"></script>
+    <script src=" @Url.Content("~/Scripts/EsconderMenu.js")"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

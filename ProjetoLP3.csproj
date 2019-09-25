@@ -139,6 +139,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HelperHome.cs" />
     <Compile Include="Models\Bairro.cs">
       <DependentUpon>ProjetoLP3.tt</DependentUpon>
     </Compile>
@@ -193,6 +194,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\imgAvatar.png" />
+    <Content Include="Images\imgRua.png" />
     <Content Include="Models\ProjetoLP3.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ProjetoLP3.Context.cs</LastGenOutput>
@@ -212,6 +215,7 @@
       <LastGenOutput>ProjetoLP3.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\EsconderMenu.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -222,6 +226,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="StyleSheets\animated-bg.css" />
+    <Content Include="StyleSheets\footer.css" />
+    <Content Include="StyleSheets\login.css" />
+    <Content Include="StyleSheets\parallax.css" />
+    <Content Include="StyleSheets\pesquisa.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -233,8 +242,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Bairro\Index.cshtml" />
     <Content Include="Views\Bairro\Inserir.cshtml" />
@@ -276,8 +283,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Images\" />
     <Folder Include="Views\Autenticacao\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>

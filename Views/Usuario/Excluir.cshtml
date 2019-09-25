@@ -1,14 +1,13 @@
 ﻿@model ProjetoLP3.Models.Usuario
 
 @{
-    ViewBag.Title = "Excluir";
+    ViewBag.Title = "Excluir Usuário";
 }
 
 <h2>Excluir</h2>
 
 <h3>Deseja excluir esse registro?</h3>
 <div>
-    <h4>Usuario</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -41,7 +40,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Remover" class="btn btn-default" /> |
             @Html.ActionLink("Voltar para a lista", "Index")
         </div>
     }

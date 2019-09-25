@@ -7,6 +7,7 @@ using ProjetoLP3.Models;
 
 namespace ProjetoLP3.Controllers
 {
+    [OutputCache(Location = System.Web.UI.OutputCacheLocation.None, NoStore = true)]
     public class CategoriaProdutoController : BaseController
     {
         private SeminarioLP3Container db = new SeminarioLP3Container();

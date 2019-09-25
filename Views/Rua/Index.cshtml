@@ -1,51 +1,54 @@
 ﻿@model IEnumerable<ProjetoLP3.Models.Rua>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Rua";
 }
 
 <h2>Ruas</h2>
 
 <p>
-    @Html.ActionLink("Criar novo", "Inserir")
+    @Html.ActionLink("Criar novo", "Inserir", null, new { @class = "btn btn-primary" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CEP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bairro.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoComercio.Nome)
-        </th>
-        <th></th>
-    </tr>
+<div style="overflow-x:auto; margin-bottom:20px;">
+    <table class="table table-striped table-bordered table-hover">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CEP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bairro.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoComercio.Nome)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CEP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Bairro.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoComercio.Nome)
-        </td>
-        <td>
-            @Html.ActionLink("Alterar", "Alterar", new { id=item.IdRua }) |
-            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.IdRua }) |
-            @Html.ActionLink("Excluir", "Excluir", new { id=item.IdRua })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CEP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bairro.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoComercio.Nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Alterar", "Alterar", new { id = item.IdRua }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.IdRua }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Excluir", "Excluir", new { id = item.IdRua }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>

@@ -1,45 +1,42 @@
 ﻿@model IEnumerable<ProjetoLP3.Models.Usuario>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Usuário";
 }
 
 <h2>Usuários</h2>
 
 <p>
-    @Html.ActionLink("Criar novo", "Inserir")
+    @Html.ActionLink("Criar novo", "Inserir", null, new { @class = "btn btn-primary" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Login)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Senha)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th></th>
-    </tr>
+<div style="overflow-x:auto; margin-bottom:20px;">
+    <table class="table table-striped table-bordered table-hover">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Login)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Senha)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.ActionLink("Alterar", "Alterar", new { id=item.IdUsuario }) |
-            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.IdUsuario }) |
-            @Html.ActionLink("Excluir", "Excluir", new { id=item.IdUsuario })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Login)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Alterar", "Alterar", new { id = item.IdUsuario }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.IdUsuario }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Excluir", "Excluir", new { id = item.IdUsuario }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>
