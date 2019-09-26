@@ -85,5 +85,15 @@ namespace ProjetoLP3.Controllers
             }
             return View(usuario);
         }
+
+        public ActionResult ValidaUsuario(string login)
+        {
+            var val = db.Usuario.Where(u => u.Login == login).FirstOrDefault();
+
+            if (val != null)
+                return Json(false, JsonRequestBehavior.AllowGet);
+            else
+                return Json(true, JsonRequestBehavior.AllowGet);
+        }
     }
 }

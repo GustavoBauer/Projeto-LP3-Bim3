@@ -15,6 +15,7 @@ namespace ProjetoLP3.Models
 
         [Required(ErrorMessage = "O Login de Usuário é obrigatório!", AllowEmptyStrings = false)]
         [Display(Name = "Login do Usuário")]
+        [System.Web.Mvc.Remote("ValidaUsuario", "Usuario", ErrorMessage = "Este login já existe no sistema")]
         public int Login { get; set; }
 
         [Required(ErrorMessage = "A Senha do Usuário é obrigatória!", AllowEmptyStrings = false)]

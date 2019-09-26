@@ -45,7 +45,7 @@ namespace ProjetoLP3.Models
         [DataType(DataType.PhoneNumber, ErrorMessage = "Telefone inválido")]
         public string Telefone { get; set; }
 
-
+        [Required(ErrorMessage = "O Site é obrigatório!", AllowEmptyStrings = false)]
         [StringLength(200, MinimumLength = 10, ErrorMessage = "O Site deve ter entre 10 e 200 Caracteres")]
         [Display(Name = "Site")]
         public string Site { get; set; }
